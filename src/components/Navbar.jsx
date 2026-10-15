@@ -15,13 +15,14 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
   }, []);
 
   const navItems = [
-    { label: 'Home', id: 'home' },
-    { label: 'Portfolio', id: 'portfolio' },
-    { label: 'Experience', id: 'experience' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Home', id: 'home', href: '/' },
+    { label: 'Portfolio', id: 'portfolio', href: '/portfolio' },
+    { label: 'Experience', id: 'experience', href: '/experience' },
+    { label: 'Contact', id: 'contact', href: '/contact' },
   ];
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
     setCurrentRoute(id);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -31,10 +32,10 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
   return (
     <header className={`navbar-wrapper ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <div 
+        <a 
+          href="/"
           className="brand-logo" 
-          onClick={() => handleNavClick('home')}
-          style={{ cursor: 'pointer' }}
+          onClick={(e) => handleNavClick(e, 'home')}
         >
           <img 
             src="/images/profile.jpg" 
@@ -42,17 +43,18 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             className="brand-avatar"
           />
           <span>Jimmy Fleck</span>
-        </div>
+        </a>
 
         <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           {navItems.map((item) => (
-            <button
+            <a
               key={item.id}
+              href={item.href}
               className={`nav-item ${currentRoute === item.id ? 'active' : ''}`}
-              onClick={() => handleNavClick(item.id)}
+              onClick={(e) => handleNavClick(e, item.id)}
             >
               {item.label}
-            </button>
+            </a>
           ))}
           <a
             href={profileData.linkedin}
