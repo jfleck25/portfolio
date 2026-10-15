@@ -28,10 +28,12 @@ export default function Footer({ onNavigate }) {
             </p>
           </div>
           <a 
-            href={`mailto:${profileData.email}`}
+            href={profileData.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
           >
-            Get In Touch
+            Connect on LinkedIn <ArrowUpRight size={16} />
           </a>
         </div>
 

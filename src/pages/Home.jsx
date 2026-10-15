@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, ExternalLink } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Sparkles, ExternalLink } from 'lucide-react';
 import { profileData, majorProjects } from '../data/portfolioData';
 
 export default function Home({ onNavigate }) {
@@ -29,10 +29,12 @@ export default function Home({ onNavigate }) {
             View Portfolio <ArrowRight size={18} />
           </button>
           <a 
-            href={`mailto:${profileData.email}`}
+            href={profileData.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-secondary"
           >
-            Get in Touch
+            Connect on LinkedIn <ArrowUpRight size={16} />
           </a>
         </div>
       </section>
