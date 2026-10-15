@@ -27,12 +27,12 @@ export default function Footer({ onNavigate }) {
               Interested in collaborating or learning more about my work?
             </p>
           </div>
-          <button 
+          <a 
+            href={`mailto:${profileData.email}`}
             className="btn btn-primary"
-            onClick={() => onNavigate('contact')}
           >
             Get In Touch
-          </button>
+          </a>
         </div>
 
         <div className="footer-content">

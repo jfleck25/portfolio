@@ -4,16 +4,15 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Experience from './pages/Experience';
-import Contact from './pages/Contact';
 
 export default function App() {
   const getInitialRoute = () => {
     const path = window.location.pathname.replace(/^\/+/g, '').toLowerCase();
-    if (['portfolio', 'experience', 'contact'].includes(path)) {
+    if (['portfolio', 'experience'].includes(path)) {
       return path;
     }
     const hash = window.location.hash.replace(/^#\/?/g, '').toLowerCase();
-    if (['portfolio', 'experience', 'contact'].includes(hash)) {
+    if (['portfolio', 'experience'].includes(hash)) {
       return hash;
     }
     return 'home';
@@ -43,7 +42,6 @@ export default function App() {
         {currentRoute === 'home' && <Home onNavigate={handleNavigate} />}
         {currentRoute === 'portfolio' && <Portfolio onNavigate={handleNavigate} />}
         {currentRoute === 'experience' && <Experience onNavigate={handleNavigate} />}
-        {currentRoute === 'contact' && <Contact onNavigate={handleNavigate} />}
       </main>
       <Footer onNavigate={handleNavigate} />
     </>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { ExternalLink, Sparkles } from 'lucide-react';
 import { GithubIcon } from '../components/Icons';
-import { profileData, majorProjects, sideProjects } from '../data/portfolioData';
-import ContactForm from '../components/ContactForm';
+import { majorProjects, sideProjects } from '../data/portfolioData';
 
 export default function Portfolio() {
   return (
@@ -98,26 +97,6 @@ export default function Portfolio() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Embedded Contact Section */}
-      <section style={{ 
-        margin: '5rem 0', 
-        padding: '3rem', 
-        background: 'var(--bg-surface)', 
-        border: '1px solid var(--border-subtle)',
-        borderRadius: 'var(--radius-lg)' 
-      }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <div className="section-tag">Let's Connect</div>
-            <h2 className="section-title">Let's build something great.</h2>
-            <p className="section-subtitle">
-              Interested in collaborating, hiring, or learning more? Drop me a message below.
-            </p>
-          </div>
-          <ContactForm />
         </div>
       </section>
     </div>

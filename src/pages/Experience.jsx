@@ -1,20 +1,8 @@
 import React from 'react';
-import { ArrowUpRight, Briefcase, GraduationCap, Award, Heart } from 'lucide-react';
+import { ArrowUpRight, Briefcase, GraduationCap, Award } from 'lucide-react';
 import { profileData, experienceTimeline } from '../data/portfolioData';
-import ContactForm from '../components/ContactForm';
 
 export default function Experience() {
-  const getIconForType = (type) => {
-    switch (type) {
-      case 'Education':
-        return <GraduationCap size={16} />;
-      case 'Leadership':
-        return <Award size={16} />;
-      default:
-        return <Briefcase size={16} />;
-    }
-  };
-
   return (
     <div className="container">
       {/* Experience Header */}
@@ -64,26 +52,6 @@ export default function Experience() {
               </ul>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Embedded Contact Section */}
-      <section style={{ 
-        margin: '5rem 0', 
-        padding: '3rem', 
-        background: 'var(--bg-surface)', 
-        border: '1px solid var(--border-subtle)',
-        borderRadius: 'var(--radius-lg)' 
-      }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <div className="section-tag">Reach Out</div>
-            <h2 className="section-title">Let's build something great.</h2>
-            <p className="section-subtitle">
-              Interested in collaborating or learning more?
-            </p>
-          </div>
-          <ContactForm />
         </div>
       </section>
     </div>

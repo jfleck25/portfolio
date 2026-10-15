@@ -28,12 +28,12 @@ export default function Home({ onNavigate }) {
           >
             View Portfolio <ArrowRight size={18} />
           </button>
-          <button 
+          <a 
+            href={`mailto:${profileData.email}`}
             className="btn btn-secondary"
-            onClick={() => onNavigate('contact')}
           >
             Get in Touch
-          </button>
+          </a>
         </div>
       </section>
 

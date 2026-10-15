@@ -18,7 +18,6 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
     { label: 'Home', id: 'home', href: '/' },
     { label: 'Portfolio', id: 'portfolio', href: '/portfolio' },
     { label: 'Experience', id: 'experience', href: '/experience' },
-    { label: 'Contact', id: 'contact', href: '/contact' },
   ];
 
   const handleNavClick = (e, id) => {

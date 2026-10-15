@@ -290,6 +290,7 @@ a {
   cursor: pointer;
   transition: all var(--transition-fast);
   border: none;
+  text-decoration: none;
 }
 
 .btn-primary {
